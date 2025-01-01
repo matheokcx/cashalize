@@ -1,0 +1,31 @@
+{
+    "labels": [
+        "janvier",
+        "fevrier",
+        "mars",
+        "avril",
+        "mai",
+        "juin",
+        "juillet",
+        "aout",
+        "septembre",
+        "octobre",
+        "novembre",
+        "decembre"
+    ],
+    "label": "Evolution de votre capital sur la derniere annee",
+    "data": [
+        7456,
+        3245,
+        9823,
+        5123,
+        8765,
+        2345,
+        6891,
+        9432,
+        7845,
+        4231,
+        6578,
+        3123
+    ]
+}

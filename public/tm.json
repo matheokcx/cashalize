@@ -1,0 +1,13 @@
+{
+    "labels": [
+        "janvier",
+        "fevrier",
+        "mars"
+    ],
+    "label": "Evolution de votre capital sur les 3 derniers mois",
+    "data": [
+        7456,
+        3245,
+        9823
+    ]
+}
