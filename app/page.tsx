@@ -15,6 +15,9 @@ export default function Home() {
   const circleGraphRef = useRef<HTMLCanvasElement | null>(null);
   const circleChartRef = useRef<Chart | null>(null);
 
+  const barGraphRef = useRef<HTMLCanvasElement | null>(null);
+  const barChartRef = useRef<Chart | null>(null);
+
   const [selectedDatas, setSelectedDatas] = useState<any>(tm);
 
   const troisMois = tm;
@@ -64,9 +67,33 @@ export default function Home() {
       });
     }
 
+    if (barGraphRef.current) {
+
+      if (barChartRef.current) barChartRef.current.destroy();
+
+      barChartRef.current = new Chart(barGraphRef.current, {
+        type: 'bar',
+        data: {
+          labels: selectedDatas.barGraph.labels,
+          datasets: [{
+            label: 'Repartition par categories',
+            data: selectedDatas.barGraph.data,
+            backgroundColor: [
+              'rgb(135, 92, 255)'
+            ],
+            borderColor: [
+              'rgb(85, 52, 212)'
+            ],
+            borderWidth: 1
+          }]
+        },
+      });
+    }
+
     return () => {
       if (chartInstanceRef.current) chartInstanceRef.current.destroy();
       if (circleChartRef.current) circleChartRef.current.destroy();
+      if (barChartRef.current) barChartRef.current.destroy();
     };
   }, [selectedDatas]);
 
@@ -84,8 +111,10 @@ export default function Home() {
       <section className='w-1/4 h-1/2 shadow-xl rounded-2xl bg-white p-8'>
         <canvas ref={circleGraphRef}></canvas>
       </section>
-      <section className='w-1/4 h-1/2 shadow-xl rounded-2xl bg-white'></section>
-      <section className='w-2/3 h-1/2 shadow-xl rounded-2xl bg-white'></section>
+      <section className='w-1/4 h-1/2 shadow-xl rounded-2xl bg-white'>
+
+      </section>
+      <section className='w-2/3 h-1/2 shadow-xl rounded-2xl bg-white flex justify-center items-center'><canvas ref={barGraphRef}></canvas></section>
     </main>
   );
 }

@@ -23,5 +23,17 @@
             30,
             47
         ]
+    },
+    "barGraph": {
+        "labels": [
+            "Marché boursier",
+            "Indices",
+            "Crypto-monnaies"
+        ],
+        "data": [
+            4600,
+            3000,
+            2223
+        ]
     }
 }

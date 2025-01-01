@@ -49,5 +49,25 @@
             10,
             10
         ]
+    },
+    "barGraph": {
+        "labels": [
+            "Marché boursier",
+            "Indices",
+            "Crypto-monnaies",
+            "Métaux précieux",
+            "Immobilier",
+            "Marchés émergents",
+            "Obligations"
+        ],
+        "data": [
+            1000,
+            800,
+            600,
+            400,
+            200,
+            100,
+            23
+        ]
     }
 }

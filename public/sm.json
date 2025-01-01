@@ -33,5 +33,21 @@
             15,
             10
         ]
+    },
+    "barGraph": {
+        "labels": [
+            "Marché boursier",
+            "Indices",
+            "Crypto-monnaies",
+            "Métaux précieux",
+            "Immobilier"
+        ],
+        "data": [
+            800,
+            600,
+            500,
+            245,
+            200
+        ]
     }
 }
