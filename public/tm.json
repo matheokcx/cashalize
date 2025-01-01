@@ -1,13 +1,27 @@
 {
-    "labels": [
-        "janvier",
-        "fevrier",
-        "mars"
-    ],
-    "label": "Evolution de votre capital sur les 3 derniers mois",
-    "data": [
-        7456,
-        3245,
-        9823
-    ]
+    "lineGraph": {
+        "labels": [
+            "janvier",
+            "fevrier",
+            "mars"
+        ],
+        "label": "Evolution de votre capital sur les 3 derniers mois",
+        "data": [
+            7456,
+            3245,
+            9823
+        ]
+    },
+    "circleGraph": {
+        "labels": [
+            "Bitcoin",
+            "S&P500",
+            "CAC40"
+        ],
+        "data": [
+            23,
+            30,
+            47
+        ]
+    }
 }

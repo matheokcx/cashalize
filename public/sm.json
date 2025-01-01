@@ -1,19 +1,37 @@
 {
-    "labels": [
-        "janvier",
-        "fevrier",
-        "mars",
-        "avril",
-        "mai",
-        "juin"
-    ],
-    "label": "Evolution de votre capital sur les 6 derniers mois",
-    "data": [
-        7456,
-        3245,
-        9823,
-        5123,
-        8765,
-        2345
-    ]
+    "lineGraph": {
+        "labels": [
+            "janvier",
+            "fevrier",
+            "mars",
+            "avril",
+            "mai",
+            "juin"
+        ],
+        "label": "Evolution de votre capital sur les 6 derniers mois",
+        "data": [
+            7456,
+            3245,
+            9823,
+            5123,
+            8765,
+            2345
+        ]
+    },
+    "circleGraph": {
+        "labels": [
+            "Bitcoin",
+            "S&P500",
+            "CAC40",
+            "Gold",
+            "Real Estate"
+        ],
+        "data": [
+            20,
+            25,
+            30,
+            15,
+            10
+        ]
+    }
 }
