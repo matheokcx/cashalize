@@ -1,11 +1,8 @@
 'use client'
 
-import Chart from 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
-import tm from '../public/tm.json';
-import sm from '../public/sm.json';
-import oy from '../public/oy.json';
-
+import Chart from 'chart.js/auto';
+import data from '../public/data.json';
 
 export default function Home() {
 
@@ -18,12 +15,10 @@ export default function Home() {
   const barGraphRef = useRef<HTMLCanvasElement | null>(null);
   const barChartRef = useRef<Chart | null>(null);
 
-  const [selectedDatas, setSelectedDatas] = useState<any>(tm);
-
-  const troisMois = tm;
-  const sixMois = sm;
-  const unAn = oy;
-
+  const troisMois = data.tm;
+  const sixMois = data.sm;
+  const unAn = data.oy;
+  const [selectedDatas, setSelectedDatas] = useState<any>(troisMois);
 
   useEffect(() => {
     if (graphRef.current) {
@@ -97,24 +92,20 @@ export default function Home() {
     };
   }, [selectedDatas]);
 
-
   return (
-    <main className="w-screen h-screen bg-black text-white p-16 flex gap-4 flex-wrap justify-center ">
-      <section className='w-2/3 h-1/2 shadow-xl rounded-2xl bg-white flex justify-center items-center gap-4 px-8 py-4'>
+    <main className="w-screen lg:h-screen dark:bg-[#303030] bg-[#fefefe] flex flex-wrap items-center gap-10 lg:gap-0 p-10">
+      <section className='w-full lg:h-2/5 dark:bg-black bg-white shadow-lg rounded-3xl flex flex-col lg:flex-row justify-center items-center gap-10 p-8'>
         <canvas ref={graphRef}></canvas>
-        <div className='flex flex-col items-center gap-4'>
-          <button onClick={() => setSelectedDatas(troisMois)} className='rounded-xl bg-[#4b20c0] text-white font-bold h-8 px-2 transition-all border-2 hover:bg-white hover:text-[#4b20c0] hover:border-[#4b20c0] hover:scale-75'>3M</button>
-          <button onClick={() => setSelectedDatas(sixMois)} className='rounded-xl bg-[#4b20c0] text-white font-bold h-8 px-2 transition-all border-2 hover:bg-white hover:text-[#4b20c0] hover:border-[#4b20c0] hover:scale-75'>6M</button>
-          <button onClick={() => setSelectedDatas(unAn)} className='rounded-xl bg-[#4b20c0] text-white font-bold h-8 px-2 transition-all border-2 hover:bg-white hover:text-[#4b20c0] hover:border-[#4b20c0] hover:scale-75'>1Y</button>
+        <div className='flex lg:flex-col items-center gap-8'>
+          <button onClick={() => setSelectedDatas(troisMois)} className='rounded-xl bg-[#4b20c0] text-white font-bold h-8 px-2 transition-all dark:border-0 border-2 hover:bg-white hover:text-[#4b20c0] hover:border-[#4b20c0] hover:scale-75'>3M</button>
+          <button onClick={() => setSelectedDatas(sixMois)} className='rounded-xl bg-[#4b20c0] text-white font-bold h-8 px-2 transition-all dark:border-0 border-2 hover:bg-white hover:text-[#4b20c0] hover:border-[#4b20c0] hover:scale-75'>6M</button>
+          <button onClick={() => setSelectedDatas(unAn)} className='rounded-xl bg-[#4b20c0] text-white font-bold h-8 px-2 transition-all dark:border-0 border-2 hover:bg-white hover:text-[#4b20c0] hover:border-[#4b20c0] hover:scale-75'>1Y</button>
         </div>
       </section>
-      <section className='w-1/4 h-1/2 shadow-xl rounded-2xl bg-white p-8'>
+      <section className='w-full lg:h-2/5 shadow-lg rounded-3xl dark:bg-black bg-white flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-0 p-8'>
         <canvas ref={circleGraphRef}></canvas>
+        <canvas ref={barGraphRef}></canvas>
       </section>
-      <section className='w-1/4 h-1/2 shadow-xl rounded-2xl bg-white'>
-
-      </section>
-      <section className='w-2/3 h-1/2 shadow-xl rounded-2xl bg-white flex justify-center items-center'><canvas ref={barGraphRef}></canvas></section>
     </main>
   );
 }
